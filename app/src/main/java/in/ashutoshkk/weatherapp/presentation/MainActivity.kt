@@ -14,18 +14,15 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import `in`.ashutoshkk.weatherapp.presentation.ui.theme.WeatherAppTheme
+import `in`.ashutoshkk.weatherapp.presentation.weather.WeatherScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             WeatherAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Greeting("Android")
+                Surface(modifier = Modifier.fillMaxSize()) {
+                    App()
                 }
             }
         }
@@ -37,7 +34,7 @@ fun App(){
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = "weather_screen") {
         composable("weather_screen") {
-//            WeatherScreen(navController = navController)
+            WeatherScreen(navController = navController)
         }
     }
 }

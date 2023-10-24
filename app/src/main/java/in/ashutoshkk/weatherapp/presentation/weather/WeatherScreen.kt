@@ -7,13 +7,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
+import `in`.ashutoshkk.weatherapp.presentation.weather.components.WeatherCard
 
 @Composable
 fun WeatherScreen(
     navController: NavController
 ) {
     Row(modifier = Modifier.fillMaxWidth()) {
-
+        WeatherCard()
     }
 }
 
