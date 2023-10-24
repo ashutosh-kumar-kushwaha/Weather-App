@@ -1,4 +1,4 @@
-package `in`.ashutoshkk.weatherapp.ui.theme
+package `in`.ashutoshkk.weatherapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
