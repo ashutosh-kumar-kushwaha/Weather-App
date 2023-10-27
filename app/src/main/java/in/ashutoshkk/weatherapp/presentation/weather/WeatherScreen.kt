@@ -1,5 +1,6 @@
 package `in`.ashutoshkk.weatherapp.presentation.weather
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
@@ -13,7 +14,7 @@ import `in`.ashutoshkk.weatherapp.presentation.weather.components.WeatherCard
 fun WeatherScreen(
     navController: NavController
 ) {
-    Row(modifier = Modifier.fillMaxWidth()) {
+    Column(modifier = Modifier.fillMaxWidth()) {
         WeatherCard()
     }
 }
