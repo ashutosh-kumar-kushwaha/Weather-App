@@ -1,11 +1,14 @@
 package `in`.ashutoshkk.weatherapp.presentation.weather
 
 import android.content.res.Configuration
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.pager.HorizontalPager
+import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -20,16 +23,33 @@ import `in`.ashutoshkk.weatherapp.presentation.ui.theme.BgColor1
 import `in`.ashutoshkk.weatherapp.presentation.weather.components.Tabs
 import `in`.ashutoshkk.weatherapp.presentation.weather.components.WeatherCard
 
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun WeatherScreen(
     navController: NavController
 ) {
     var selectedTabIndex by rememberSaveable { mutableIntStateOf(0) }
-    Column(modifier = Modifier.fillMaxWidth().background(BgColor1)) {
+    val pagerState = rememberPagerState(pageCount = {3})
+    Column(modifier = Modifier
+        .fillMaxWidth()
+        .background(BgColor1)) {
         WeatherCard()
         Spacer(modifier = Modifier.height(18.dp))
         Tabs(selectedTabIndex){
             selectedTabIndex = it
+        }
+        HorizontalPager(state = pagerState) { page ->
+            when(page){
+                0 -> {
+                    // Today
+                }
+                1 -> {
+                    // Tomorrow
+                }
+                2 -> {
+                    // 10 Days
+                }
+            }
         }
     }
 }
