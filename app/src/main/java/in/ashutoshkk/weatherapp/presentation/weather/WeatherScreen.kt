@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
@@ -20,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import `in`.ashutoshkk.weatherapp.presentation.ui.theme.BgColor1
+import `in`.ashutoshkk.weatherapp.presentation.weather.components.TabContent
 import `in`.ashutoshkk.weatherapp.presentation.weather.components.Tabs
 import `in`.ashutoshkk.weatherapp.presentation.weather.components.WeatherCard
 
@@ -38,10 +40,16 @@ fun WeatherScreen(
         Tabs(selectedTabIndex){
             selectedTabIndex = it
         }
-        HorizontalPager(state = pagerState) { page ->
+        Spacer(modifier = Modifier.height(16.dp))
+        HorizontalPager(
+            state = pagerState,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp)
+        ) { page ->
             when(page){
                 0 -> {
-                    // Today
+                    TabContent()
                 }
                 1 -> {
                     // Tomorrow
