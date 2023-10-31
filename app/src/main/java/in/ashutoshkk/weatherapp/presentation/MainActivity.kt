@@ -14,9 +14,11 @@ import androidx.core.view.WindowCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import dagger.hilt.android.AndroidEntryPoint
 import `in`.ashutoshkk.weatherapp.presentation.ui.theme.WeatherAppTheme
 import `in`.ashutoshkk.weatherapp.presentation.weather.WeatherScreen
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

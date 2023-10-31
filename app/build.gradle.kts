@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -70,4 +72,10 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.4")
     implementation("androidx.constraintlayout:constraintlayout-compose:1.0.1")
 
+    implementation("com.google.dagger:hilt-android:2.48.1")
+    kapt("com.google.dagger:hilt-compiler:2.48.1")
+}
+
+kapt {
+    correctErrorTypes = true
 }

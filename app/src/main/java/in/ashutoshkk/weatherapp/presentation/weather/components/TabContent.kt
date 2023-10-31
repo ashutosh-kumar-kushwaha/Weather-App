@@ -30,7 +30,7 @@ import `in`.ashutoshkk.weatherapp.presentation.ui.theme.TextColor2
 import `in`.ashutoshkk.weatherapp.presentation.ui.theme.productSansFamily
 
 @Composable
-fun TabContent() {
+fun TabContent(tabContentTypes: TabContentTypes = TabContentTypes.Today) {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         verticalArrangement = Arrangement.spacedBy(12.dp),
@@ -89,4 +89,10 @@ fun InfoItem() {
 @Composable
 fun PreviewTabContent() {
     TabContent()
+}
+
+enum class TabContentTypes {
+    Today,
+    Tomorrow,
+    TenDays
 }
