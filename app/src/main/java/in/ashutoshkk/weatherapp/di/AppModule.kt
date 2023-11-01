@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class NetworkModule {
+abstract class AppModule {
     @Provides
     fun providesWeatherApiService() =
         Retrofit.Builder()
