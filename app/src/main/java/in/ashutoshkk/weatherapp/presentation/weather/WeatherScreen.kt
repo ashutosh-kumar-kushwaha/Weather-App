@@ -1,6 +1,5 @@
 package `in`.ashutoshkk.weatherapp.presentation.weather
 
-import android.content.res.Configuration
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -31,13 +30,15 @@ fun WeatherScreen(
     navController: NavController
 ) {
     var selectedTabIndex by rememberSaveable { mutableIntStateOf(0) }
-    val pagerState = rememberPagerState(pageCount = {3})
-    Column(modifier = Modifier
-        .fillMaxWidth()
-        .background(BgColor1)) {
+    val pagerState = rememberPagerState(pageCount = { 3 })
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(BgColor1)
+    ) {
         WeatherCard()
         Spacer(modifier = Modifier.height(18.dp))
-        Tabs(selectedTabIndex){
+        Tabs(selectedTabIndex) {
             selectedTabIndex = it
         }
         Spacer(modifier = Modifier.height(16.dp))
@@ -47,13 +48,15 @@ fun WeatherScreen(
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp)
         ) { page ->
-            when(page){
+            when (page) {
                 0 -> {
                     TabContent()
                 }
+
                 1 -> {
                     // Tomorrow
                 }
+
                 2 -> {
                     // 10 Days
                 }

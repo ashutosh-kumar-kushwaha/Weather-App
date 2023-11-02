@@ -1,7 +1,7 @@
 package `in`.ashutoshkk.weatherapp.domain.useCase
 
 import `in`.ashutoshkk.weatherapp.common.Resource
-import `in`.ashutoshkk.weatherapp.data.remote.dto.CurrentWeatherResponse
+import `in`.ashutoshkk.weatherapp.data.remote.dto.CurrentWeatherDto
 import `in`.ashutoshkk.weatherapp.domain.repository.WeatherRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -11,7 +11,7 @@ import javax.inject.Inject
 class WeatherUseCase @Inject constructor(
     private val weatherRepository: WeatherRepository
 ){
-    fun getCurrentWeather() : Flow<Resource<CurrentWeatherResponse>> = flow {
+    fun getCurrentWeather() : Flow<Resource<CurrentWeatherDto>> = flow {
         emit(Resource.Loading())
         try {
             emit(Resource.Success(weatherRepository.getCurrentWeather()))

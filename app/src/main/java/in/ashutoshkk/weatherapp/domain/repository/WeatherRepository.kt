@@ -1,7 +1,7 @@
 package `in`.ashutoshkk.weatherapp.domain.repository
 
-import `in`.ashutoshkk.weatherapp.data.remote.dto.CurrentWeatherResponse
+import `in`.ashutoshkk.weatherapp.data.remote.dto.CurrentWeatherDto
 
 interface WeatherRepository {
-    suspend fun getCurrentWeather(): CurrentWeatherResponse
+    suspend fun getCurrentWeather(): CurrentWeatherDto
 }
